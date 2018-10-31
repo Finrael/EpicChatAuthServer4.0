@@ -25,7 +25,10 @@ router.post('/registerUser', function (req, res) {
             }
             else {
                 console.log("user saved successfully");
-                res.end();
+                console.log('this is user', user._id);
+                res.json({ user: user._id });
+                // res.send(' {userID:user._id}')
+                // res.end();
                 // router.use(complementaryInfo);
             }
         });

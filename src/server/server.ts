@@ -14,8 +14,8 @@ import endPoints from '../endpoints';
 import http from 'http';
 import  '../register/jwtStategy'
 mongoose.connect(
-    'mongodb://localhost:27017/chatDB', (error: any) => {
-
+    // 'mongodb://192.168.99.100:27017/chatDB', (error: any) => {
+        'mongodb://localhost:27017/AuthDB', (error: any) => {
         if (error) {
             console.log('error');
             process.exit();
