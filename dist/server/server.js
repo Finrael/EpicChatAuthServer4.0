@@ -14,9 +14,10 @@ var passport_1 = __importDefault(require("passport"));
 var endpoints_1 = __importDefault(require("../endpoints"));
 var http_1 = __importDefault(require("http"));
 require("../register/jwtStategy");
+var configFile_1 = require("../configFile");
 mongoose_1.default.connect(
 // 'mongodb://192.168.99.100:27017/chatDB', (error: any) => {
-'mongodb://localhost:27017/AuthDB', function (error) {
+'mongodb://' + configFile_1.mongo_serverAddress + ':' + configFile_1.mongo_serverPort + '/AuthDB', { useNewUrlParser: true }, function (error) {
     if (error) {
         console.log('error');
         process.exit();

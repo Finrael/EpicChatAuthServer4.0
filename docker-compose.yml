@@ -11,5 +11,8 @@ services:
     ports:
     - "27017:27017"
     volumes: 
-    - data-volumen/data/db
+    - authData:/data/authdb
+
+volumes:
+  authData:
 

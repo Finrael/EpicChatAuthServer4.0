@@ -12,10 +12,11 @@ import PasswordJWT from 'passport-jwt';
 import PasswordLocal from'passport-local'
 import endPoints from '../endpoints';
 import http from 'http';
-import  '../register/jwtStategy'
+import  '../register/jwtStategy';
+import {mongo_serverAddress, mongo_serverPort} from '../configFile'
 mongoose.connect(
     // 'mongodb://192.168.99.100:27017/chatDB', (error: any) => {
-        'mongodb://localhost:27017/AuthDB', (error: any) => {
+        'mongodb://'+mongo_serverAddress+':'+mongo_serverPort+'/AuthDB',{useNewUrlParser:true}, (error: any) => {
         if (error) {
             console.log('error');
             process.exit();
