@@ -1,0 +1,16 @@
+ apiVersion: v1
+ kind: Pod
+ metadata:
+   name: epic-auth-pod
+   labels:
+     app: epic-auth-pod
+ spec:
+   containers:
+     - name: epic-auth-server
+       image: auth-service:v1
+       ports:
+         - containerPort: 5001
+     - name: epic-auth-mongo
+       image: mongo
+       ports:
+         - containerPort: 27017
